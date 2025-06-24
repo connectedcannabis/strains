@@ -280,10 +280,9 @@ def update_graph(start_date, end_date, selected_sites, selected_brands):
 
     return fig
 
-    fig.write_html("index.html", full_html=True, auto_open=False, include_plotlyjs='cdn')
-
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 8050))
+    app.run(debug=False, host='0.0.0.0', port=port)
 
 
 
