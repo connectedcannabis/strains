@@ -4,6 +4,7 @@ import plotly.graph_objs as go
 from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
+"""
 # Load and filter by date
 CombinedHarvestSchedule_df = pd.read_csv("CMS.csv", header=0)
 CombinedHarvestSchedule_df['Actual_Harvest_Date'] = pd.to_datetime(CombinedHarvestSchedule_df['Actual_Harvest_Date'])
@@ -108,16 +109,8 @@ trimmed_df['Harvest_Batch_No_'] = trimmed_df['Harvest_Batch_No_'].astype(str).st
 
 #merge to original dataframe baed on Harvest Batch No. or Batch ID
 HarvestData = pd.merge(df, trimmed_df, on="Harvest_Batch_No_", how="outer")
-
-print(HarvestData[['Harvest_Batch_No_', 'Strain_Name', 'THC Percentage (% Total THC)', 'Terpene Percentage (% Total Terpenes)']].dropna())
-print("QC batch IDs in df:", df['Harvest_Batch_No_'].unique()[:5])
-print("Trimmed batch IDs:", trimmed_df['Harvest_Batch_No_'].unique()[:5])
-
-
-import pandas as pd
-import numpy as np
-import plotly.graph_objs as go
-from dash import Dash, dcc, html, Input, Output
+"""
+HarvestData = pd.read_csv('data.csv', header=0)
 
 # Assume HarvestData is already defined
 site_options = [{'label': site, 'value': site} for site in sorted(HarvestData['Site'].dropna().unique())]
